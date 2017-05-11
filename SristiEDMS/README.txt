@@ -15,3 +15,9 @@ Backend: J2EE Technology
 Database: any Database (Recommendation: MS SQL Server)
 
 UI: Angular or JSP (Recommendation: Angular)
+
+
+<!------------------------------------- About This Application------------------->
+Backend : J2EE
+FrontEnd: JSP,AngularJs
+DataBase: Mysql
