@@ -8,6 +8,15 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
+<script type="text/javascript">
+function validation(){
+	re = /^[A-Za-z]+$/;
+    if(re.test(document.searchForm.keyId.value)){return false;}
+	 else
+    {alert('Invalid..!');
+    document.searchForm.keyId.value="";}
+}
+</script>
 <link href=”bootstrap/css/bootstrap.min.css” rel=”stylesheet”
 	type=”text/css” />
 <script type=”text/javascript” src=”bootstrap/js/bootstrap.min.js”></script>
@@ -53,6 +62,7 @@ myApp.controller('myControllers',function($scope)
  $scope.reverse=true;
 }); 
 </script>
+<title>KeyWord Search</title>
 </head>
 <body ng-controller="myControllers">
 	<div>
@@ -60,7 +70,7 @@ myApp.controller('myControllers',function($scope)
 			<form class="form-wrapper-2 cf" method="get" name="searchForm"
 				action="./SearchKeyword">
 				<p>
-					<input ng-model="query.name" type="text" id="keyId" name="keyId" />
+					<input ng-model="query.name" onkeyup="validation()" type="text" id="keyId" name="keyId" />
 					<button class="button">
 						<span>Search </span>
 					</button>
@@ -71,6 +81,7 @@ myApp.controller('myControllers',function($scope)
 				</p>
 		</div>
 		<div id="div2" class="form-group">
+		<p> Output:</p>
 			<ul>
 				<%
 					int count = 0;
